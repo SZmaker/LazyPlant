@@ -57,9 +57,9 @@ def main():
             "o2":1.2,
             "humidity":1.3,
             "temperature":1.4,
-            "timestamp":"2015-06-01 12:00:00",
+            "timestamp":"2015-06-01 12:00:01",
             }
-        r = requests.post(url, data=data, files=None)#{"image":image})
+        r = requests.post(url, data=data, files={"image":image})
         print(r.text)
 
 if __name__ == "__main__":
