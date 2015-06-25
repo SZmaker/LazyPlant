@@ -69,10 +69,10 @@ class WechatCgiApi(object):
     def create_custom_menu(self, access_token, menu_dict={}, content=None):
         url = self._get_entry("menu/create", {"access_token":access_token})
         if content:
-            body = content.encode("gb2312")
+            body = content.encode("utf-8")
         else:
             body = json.dumps(menu_dict)
-        log.info(u"Create custom menu: {0}\nPost: {1}".format(url, body))
+        log.info("Create custom menu: {0}\nPost: {1}".format(url, body))
 
         return self._send_post_request(url, body)
 
